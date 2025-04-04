@@ -18,10 +18,10 @@ while len(guessed_state) < len(data["state"]):
     answer_state = screen.textinput(title=f"{len(guessed_state)}/50 the State", prompt="What's another state's name?").title()
     state_column = data["state"]
     if answer_state == 'Exit':
-        missing_state = []
-        for state in all_state_list:
-            if state not in guessed_state:
-                missing_state.append(state)
+        missing_state = [state for state in all_state_list if state not in guessed_state]
+        # for state in all_state_list:
+            # if state not in guessed_state:
+            #     missing_state.append(state)
         print(missing_state)
         break
     for state in state_column:
