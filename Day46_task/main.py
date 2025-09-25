@@ -1,17 +1,24 @@
 import requests, bs4
+
+#day 46
+# song_list = []
 # throwback_year = input("What year music do you want to throwback to [YYYY-MM-DD]: ")
 header = {'USER-AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'}
 
-response = requests.get(url=f"https://www.billboard.com/charts/hot-100/", headers=header)
+# response = requests.get(url=f"https://www.billboard.com/charts/hot-100/{throwback_year}", headers=header)
+# soup = bs4.BeautifulSoup(response.text, 'html.parser')
+
+# song_names_spans = soup.select("li ul li h3")
+# for song in song_names_spans:
+#     song_list.append(song.getText().strip())
+
+# print(song_list)
+# print(len(song_list))
+
+#day 47
+website = "https://appbrewery.github.io/instant_pot/"
+response = requests.get(url=website, headers=header)
 soup = bs4.BeautifulSoup(response.text, 'html.parser')
-
-html_file = soup.prettify()
-
-with open ("billboard.html", "w") as file:
-    file.write(html_file)
-
-
-# print(soup.title)
-# div_soup = soup.find_all("h3", id="title-of-a-story")
-# for text in div_soup:
-#     print(text.getText())
+price = soup.select("span", class_="aok-offscreen")
+for price in price:
+    print(price)
