@@ -14,6 +14,7 @@
         <ul>
           <li><a href="#html">Learning HTML</a></li>
           <li><a href="#vacation">Planning a Vacation</a></li>
+          <li><a href="#contact">Contact me</a></li>
         </ul>
       </nav>
     </header>
@@ -155,6 +156,73 @@
           <h3>Place I Want to Avoid</h3>
           <p>Anywhere cold. <strong>No way!</strong></p>
         </section>
+      </article>
+
+      <hr />
+
+      <article id="contact">
+        <h2>Contact me</h2>
+        <p>I'd really love to hear from you!</p>
+        <form action="https://httpbin.org/get" method="get">
+          <p>
+            <label for="firstName">First Name</label>
+            <input
+              type="text"
+              name="firstName"
+              id="firstName"
+              placeholder="Jane"
+              autocomplete="on"
+              required
+              autofocus
+            />
+          </p>
+          <p>
+            <label for="lastName">Last Name</label>
+            <input
+              type="text"
+              name="lastName"
+              id="lastName"
+              placeholder="Doe"
+              autocomplete="on"
+              required
+            />
+          </p>
+          <p>
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="your secret"
+              required
+            />
+          </p>
+          <p>
+            <label for="phone">Phone</label>
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder="1234567890"
+              pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+              required
+            />
+          </p>
+          <p>
+            <label for="decade">Favorite Decade</label>
+            <input
+              type="number"
+              name="decade"
+              id="decade"
+              placeholder="1234567890"
+              min="1950"
+              max="2020"
+              step="10"
+              value="1980"
+              required
+            />
+          </p>
+        </form>
       </article>
     </main>
 
