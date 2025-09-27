@@ -20,5 +20,7 @@ website = "https://appbrewery.github.io/instant_pot/"
 response = requests.get(url=website, headers=header)
 soup = bs4.BeautifulSoup(response.text, 'html.parser')
 price = soup.find_all("span", class_="aok-offscreen")
-for price in price:
-    print(price)
+price_string = price[0].getText()
+price_cooker = float(price_string.split("$")[1])
+print(type(price_cooker))
+
