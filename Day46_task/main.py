@@ -19,6 +19,6 @@ header = {'USER-AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/5
 website = "https://appbrewery.github.io/instant_pot/"
 response = requests.get(url=website, headers=header)
 soup = bs4.BeautifulSoup(response.text, 'html.parser')
-price = soup.select("span", class_="aok-offscreen")
+price = soup.find_all("span", class_="aok-offscreen")
 for price in price:
     print(price)
